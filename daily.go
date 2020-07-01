@@ -63,7 +63,9 @@ func (c *Client) GetDomainConfig(ctx context.Context) (*DomainConfig, error) {
 // SetDomainConfig updates domain configuration information.
 func (c *Client) SetDomainConfig(ctx context.Context, req *Config) (*DomainConfig, error) {
 	resp := &DomainConfig{}
-	return resp, c.request(ctx, "POST", "", req, resp)
+	return resp, c.request(ctx, "POST", "", struct {
+		Properties *Config
+	}{req}, resp)
 }
 
 // ListRooms returns available rooms.

@@ -54,7 +54,7 @@ type RoomConfig struct {
 	OwnerOnlyBroadcast *bool   `json:"owner_only_broadcast,omitempty"`
 	EnableRecording    *bool   `json:"enable_recording,omitempty"`
 	EjectAtRoomExpiry  *bool   `json:"eject_at_room_exp,omitempty"`
-	EjectAfterElapsed  *bool   `json:"eject_after_elapsed,omitempty"`
+	EjectAfterElapsed  *int32  `json:"eject_after_elapsed,omitempty"`
 	Lang               *string `json:"lang,omitempty"`
 }
 
